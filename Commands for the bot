@@ -1,0 +1,48 @@
+Sendbrowncheese:
+
+module.exports = {
+    name: 'send',
+    description: "sends a browncheese img",
+    execute(message, args) {
+        message.channel.send("REJOICE!", { files: ["https://i.imgur.com/PleG0D8.jpg"] });
+    }
+}
+
+ping:
+
+module.exports = {
+    name: 'ping',
+    description: "this is a ping command!",
+    execute(message, args) {
+        message.channel.send('pong!');
+    }
+}
+
+help:
+
+module.exports = {
+    name: 'help',
+    description: "This displayes an embed of the commands",
+    execute(message, args, Discord) {
+        const newEmbed = new Discord.MessageEmbed()
+            .setColor('#8B5424')
+            .setTitle('Commands')
+            .setDescription('This are the commands for the bot:')
+            .addFields({ name: 'ping', value: 'Pong!' }, { name: 'send', value: 'sends image of browncheese' }, { name: 'browncheese', value: 'sends response' })
+            .setImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1xQ_ABtBn3lmI-uP7mJN9ax5MlaUZfBDVtw&usqp=CAU')
+            .setFooter('More commands to come, PRAISE THE BROWNCHEESE')
+            .setTimestamp()
+        message.channel.send(newEmbed);
+    }
+
+}
+
+Browncheese:
+
+module.exports = {
+    name: 'browncheese',
+    description: "displays mesg",
+    execute(message, args) {
+        message.channel.send('our god');
+    }
+}
